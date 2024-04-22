@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="580.0" prefWidth="849.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.AppFXMLController">
+   <left>
+      <ListView fx:id="listView" prefHeight="580.0" prefWidth="398.0" BorderPane.alignment="CENTER" />
+   </left>
+   <center>
+      <FlowPane alignment="CENTER" columnHalignment="CENTER" orientation="VERTICAL" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="Pamatky">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <FlowPane alignment="CENTER" prefHeight="470.0" prefWidth="379.0">
+               <children>
+                  <FlowPane alignment="BASELINE_LEFT" columnHalignment="CENTER" hgap="10.0" prefHeight="30.0" prefWidth="200.0" rowValignment="TOP">
+                     <children>
+                        <Label text="Nazev" />
+                        <TextField fx:id="inputNazev" promptText="Pamatka" />
+                     </children>
+                  </FlowPane>
+                  <FlowPane alignment="BASELINE_LEFT" columnHalignment="CENTER" hgap="10.0" prefHeight="30.0" prefWidth="200.0" rowValignment="TOP">
+                     <children>
+                        <Label text="Zem. sirka" />
+                        <TextField fx:id="inputSirka" prefHeight="25.0" prefWidth="128.0" promptText="12.345678 (°)" />
+                     </children>
+                  </FlowPane>
+                  <FlowPane alignment="BASELINE_LEFT" columnHalignment="CENTER" hgap="10.0" prefHeight="30.0" prefWidth="200.0" rowValignment="TOP">
+                     <children>
+                        <Label text="Zem. delka" />
+                        <TextField fx:id="inputDelka" prefHeight="25.0" prefWidth="124.0" promptText="12.345678 (°)" />
+                     </children>
+                  </FlowPane>
+                  <FlowPane alignment="CENTER" columnHalignment="CENTER" hgap="10.0" prefHeight="268.0" prefWidth="397.0" vgap="10.0">
+                     <children>
+                        <Button fx:id="btnVlozit" mnemonicParsing="false" onAction="#vlozit" text="Vlozit" />
+                        <Button fx:id="btnPromazat" mnemonicParsing="false" onAction="#promazat" text="Promazat" />
+                        <Button fx:id="btnVymazat" mnemonicParsing="false" onAction="#vymazat" text="Vymazat zaznam" />
+                        <Button fx:id="btnUlozit" mnemonicParsing="false" onAction="#ulozit" text="Ulozit" />
+                        <Button fx:id="btnNahratUkazkove" mnemonicParsing="false" onAction="#nahratUkazkove" text="Nahrat z ukazkoveho souboru" />
+                        <Button fx:id="btnNahratUlozene" mnemonicParsing="false" onAction="#nahratUlozene" text="Nahrat z ulozeneho souboru" />
+                        <Button fx:id="btnVygenerovat" mnemonicParsing="false" onAction="#vygenerovat" text="Vygenerovat data" />
+                        <TextField fx:id="inputPocet" prefHeight="25.0" prefWidth="113.0" promptText="20" />
+                        <Button fx:id="btnPrebuduj" mnemonicParsing="false" onAction="#prebudovat" text="Prebudovat" />
+                        <Button fx:id="btnPodleKlice" mnemonicParsing="false" onAction="#najitPodleKlice" prefHeight="25.0" prefWidth="102.0" text="Najit podle klice" />
+                        <Button fx:id="btnProhlidka" mnemonicParsing="false" onAction="#zobrazitProhlidku" text="Zobrazit prohlidku" />
+                        <Button fx:id="btnNejblizsi" mnemonicParsing="false" onAction="#najitNejblizsi" text="Najdi nejblizsi" />
+                        <FlowPane alignment="CENTER" columnHalignment="CENTER" hgap="10.0" prefHeight="30.0" prefWidth="200.0">
+                           <children>
+                              <RadioButton mnemonicParsing="false" selected="true" text="GPS">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="groupKlic" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton mnemonicParsing="false" text="Nazev" toggleGroup="$groupKlic" />
+                           </children>
+                        </FlowPane>
+                        <FlowPane alignment="CENTER" columnHalignment="CENTER" hgap="10.0" prefHeight="30.0" prefWidth="200.0">
+                           <children>
+                              <RadioButton mnemonicParsing="false" selected="true" text="Hluboka">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="groupProhlidka" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton mnemonicParsing="false" text="Siroka" toggleGroup="$groupProhlidka" />
+                           </children>
+                        </FlowPane>
+                     </children>
+                  </FlowPane>
+                  <TextArea fx:id="textArea" editable="false" prefHeight="142.0" prefWidth="399.0" />
+               </children>
+            </FlowPane>
+         </children>
+      </FlowPane>
+   </center>
+</BorderPane>
